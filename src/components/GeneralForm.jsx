@@ -32,9 +32,11 @@ export default function GeneralForm({onClick, person}){
                 value={localPerson.phone}
                 onChange={(e)=> setLocalPerson({...localPerson, phone: e.target.value})}  />
             </div>
-            <button onClick={() => onClick(
+            <button onClick={(e) => {
+            e.preventDefault();
+            onClick(
                 {...person, ...localPerson }
-            )}>Submit</button>
+            )}}>Submit</button>
         </div>
     )
 }
