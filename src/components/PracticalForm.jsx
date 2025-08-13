@@ -37,9 +37,11 @@ export default function PracticalForm({onClick, practical}){
                 value={localPractical.lastDate}
                 onChange={(e) => {setLocalPractical({...localPractical, lastDate: e.target.value})}} />
             </div>
-            <button onClick={()=>
-                onClick(...practical, ...localPractical)
-            }>Add</button>
+            <button onClick={(e)=>{
+                e.preventDefault();
+                onClick(
+                {...practical, ...localPractical}
+            )}}>Add</button>
         </div>
     )
 }
