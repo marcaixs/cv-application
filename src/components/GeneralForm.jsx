@@ -6,7 +6,7 @@ export default function GeneralForm({onClick, person}){
     return(
         <div className="form-general">
             <div className="form-general-input">
-                <label for="name">Enter your name: </label>
+                <label htmlFor="name">Enter your name: </label>
                 <input 
                 type="text" 
                 name="name" 
@@ -15,7 +15,7 @@ export default function GeneralForm({onClick, person}){
                 onChange={(e)=> setLocalPerson({...localPerson, name: e.target.value})}  />
             </div>
             <div className="form-general-input">
-                <label for="email">Enter your email: </label>
+                <label htmlFor="email">Enter your email: </label>
                 <input 
                 type="email" 
                 name="email" 
@@ -24,7 +24,7 @@ export default function GeneralForm({onClick, person}){
                 onChange={(e)=> setLocalPerson({...localPerson, email: e.target.value})}  />
             </div>
             <div className="form-general-input">
-                <label for="phone">Enter your phone number: </label>
+                <label htmlFor="phone">Enter your phone number: </label>
                 <input 
                 type="text" 
                 name="phone" 
