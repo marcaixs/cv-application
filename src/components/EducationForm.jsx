@@ -1,18 +1,40 @@
-export default function EducationForm(){
+import { useState } from "react"
+
+export default function EducationForm({onClick, education}){
+    const [localEducation, setLocalEducation] = useState(education);
+
     return(
-        <div>
-            <div class="form-example">
-                <label for="school-name">Enter your school name: </label>
-                <input type="text" name="school-name" id="school-name" required />
+        <div className='form-education'>
+            <div className="form-education-input">
+                <label htmlFor="school">Enter your school name: </label>
+                <input 
+                type="text" 
+                name="school" 
+                id="school"
+                value={localEducation.school}
+                onChange={(e)=> setLocalEducation({...education, school: e.target.value})} />
             </div>
-            <div class="form-example">
-                <label for="studie-title">Enter studie title: </label>
-                <input type="text" name="studie" id="studie" required />
+            <div className="form-education-input">
+                <label htmlFor="studie-title">Enter studie title: </label>
+                <input 
+                type="text" 
+                name="studie" 
+                id="studie"
+                value={localEducation.studie}
+                onChange={(e)=> setLocalEducation({...education, studie: e.target.value})} />
             </div>
-            <div class="form-example">
-                <label for="studie-date">Enter your studies date: </label>
-                <input type="date" name="studie-date" id="studie-date" required />
+            <div className="form-education-input">
+                <label htmlFor="studie-date">Enter your studies date: </label>
+                <input 
+                type="date" 
+                name="studie-date" 
+                id="date" 
+                value={localEducation.date}
+                onChange={(e)=> setLocalEducation({...education, date: e.target.value})}/>
             </div>
+             <button onClick={() => onClick(
+                {...education, ...localEducation }
+            )}>Add</button>
         </div>
     )
 }
