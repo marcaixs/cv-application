@@ -32,9 +32,11 @@ export default function EducationForm({onClick, education}){
                 value={localEducation.date}
                 onChange={(e)=> setLocalEducation({...education, date: e.target.value})}/>
             </div>
-             <button onClick={() => onClick(
+             <button onClick={(e) =>{
+                e.preventDefault();
+                onClick(
                 {...education, ...localEducation }
-            )}>Add</button>
+            )}}>Add</button>
         </div>
     )
 }
