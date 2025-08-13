@@ -4,7 +4,7 @@ export default function PracticalForm({onClick, practical}){
     const [localPractical, setLocalPractical] = useState(practical);
 
     return(
-        <div>
+        <div className="form-practical">
             <div className="form-practical-input">
                 <label htmlFor="company">Enter the company name: </label>
                 <input type="text" 
