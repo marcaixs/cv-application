@@ -6,12 +6,13 @@ import { useState } from "react";
 export default function Form(){
  const [person, setPerson] = useState({name: "", email: "", phone: ""});
  const [education, setEducation] = useState({school: "", studie: "", date: ""});
+ const [practical, setPractical] = useState({company: "", position:"", firstDate: "", lastDate: ""});
 
     return(
         <form>
             <GeneralForm onClick={setPerson} person={person}/>
             <EducationForm onClick={setEducation} education={education}/>
-            <PracticalForm />
+            <PracticalForm onClick={setPractical} practical={practical}/>
         </form>
     )
 }
