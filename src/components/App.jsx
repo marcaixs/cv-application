@@ -8,7 +8,7 @@ import '../styles/app.css'
 export default function App(){
  const [person, setPerson] = useState({name: "", email: "", phone: ""});
  const [education, setEducation] = useState([]);
- const [practical, setPractical] = useState({company: "", position:"", firstDate: "", lastDate: ""});
+ const [practical, setPractical] = useState([]);
 
     return(
         <div className="app-container">
