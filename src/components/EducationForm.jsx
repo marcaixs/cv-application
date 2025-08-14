@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function EducationForm({onClick, education}){
-    const [localEducation, setLocalEducation] = useState(education);
+    const [localEducation, setLocalEducation] = useState({school: "", studie: "", date: ""});
 
     return(
         <div className='form-education'>
@@ -12,7 +12,7 @@ export default function EducationForm({onClick, education}){
                 name="school" 
                 id="school"
                 value={localEducation.school}
-                onChange={(e)=> setLocalEducation({...education, school: e.target.value})} />
+                onChange={(e)=> setLocalEducation({...localEducation, school: e.target.value})} />
             </div>
             <div className="form-education-input">
                 <label htmlFor="studie-title">Enter studie title: </label>
@@ -21,7 +21,7 @@ export default function EducationForm({onClick, education}){
                 name="studie" 
                 id="studie"
                 value={localEducation.studie}
-                onChange={(e)=> setLocalEducation({...education, studie: e.target.value})} />
+                onChange={(e)=> setLocalEducation({...localEducation, studie: e.target.value})} />
             </div>
             <div className="form-education-input">
                 <label htmlFor="studie-date">Enter your studies date: </label>
@@ -30,13 +30,12 @@ export default function EducationForm({onClick, education}){
                 name="studie-date" 
                 id="date" 
                 value={localEducation.date}
-                onChange={(e)=> setLocalEducation({...education, date: e.target.value})}/>
+                onChange={(e)=> setLocalEducation({...localEducation, date: e.target.value})}/>
             </div>
              <button onClick={(e) =>{
                 e.preventDefault();
-                onClick(
-                {...education, ...localEducation }
-            )}}>Add</button>
+                onClick([...education, localEducation])
+                }}>Add</button>
         </div>
     )
 }
