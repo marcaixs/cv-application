@@ -1,7 +1,9 @@
 import { useState } from "react"
 
 export default function PracticalForm({onClick, practical}){
-    const [localPractical, setLocalPractical] = useState({company: "", position:"", firstDate: "", lastDate: ""});
+    const [localPractical, setLocalPractical] = useState({id: "", company: "", position:"", firstDate: "", lastDate: ""});
+
+    
 
     return(
         <div className="form-practical">
@@ -39,6 +41,7 @@ export default function PracticalForm({onClick, practical}){
             </div>
             <button onClick={(e)=>{
                 e.preventDefault();
+                setLocalPractical({...localPractical, id: crypto.randomUUID()})
                 onClick([...practical, localPractical])
                 }}>Add</button>
         </div>
