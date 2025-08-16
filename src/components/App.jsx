@@ -13,6 +13,7 @@ export default function App(){
     return(
         <div className="app-container">
             <div className="form-conatiner">
+                <h2>Form</h2>
                 <GeneralForm onClick={setPerson} person={person}/>
                 <EducationForm onClick={setEducation} education={education}/>
                 <PracticalForm onClick={setPractical} practical={practical}/>
