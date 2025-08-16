@@ -3,8 +3,12 @@ import { useState } from "react"
 export default function PracticalForm({onClick, practical}){
     const [localPractical, setLocalPractical] = useState({id: "", company: "", position:"", firstDate: "", lastDate: ""});
 
-  
-    const cards = education.map(item => 
+    function handleDelete(id){
+        const updatedPractical = practical.filter((item)=> item.id != id);
+        onClick(updatedPractical);
+    }
+
+    const cards = practical.map(item => 
     <div className="practical-card" key={item.id}>
         <p>{item.company}</p>
         <p>{item.position}</p>
