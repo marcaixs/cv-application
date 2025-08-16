@@ -3,7 +3,16 @@ import { useState } from "react"
 export default function PracticalForm({onClick, practical}){
     const [localPractical, setLocalPractical] = useState({id: "", company: "", position:"", firstDate: "", lastDate: ""});
 
-    
+    const cards = education.map(item => 
+    <div className="practical-card" key={item.id}>
+        <p>{item.company}</p>
+        <p>{item.position}</p>
+        <p>{item.firstDate}</p>
+        <p>{item.lastDate}</p>
+        <button onClick={
+            () => handleDelete(item.id)
+        }>Delete</button>
+    </div>)
 
     return(
         <div className="form-practical">
