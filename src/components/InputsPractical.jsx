@@ -1,6 +1,7 @@
 export default function InputsPractical({localPractical, setLocalPractical, practical, onClick}){
     return(
         <>
+        <h3>Introduce your practical background</h3>
          <div className="form-practical-input">
                 <label htmlFor="company">Enter the company name: </label>
                 <input type="text" 
