@@ -1,4 +1,5 @@
 import { useState } from "react"
+import InputsPractical from "./InputsPractical";
 
 export default function PracticalForm({onClick, practical}){
     const [localPractical, setLocalPractical] = useState({id: crypto.randomUUID(), company: "", position:"", firstDate: "", lastDate: ""});
@@ -21,8 +22,8 @@ export default function PracticalForm({onClick, practical}){
 
     return(
         <div className="form-practical">
-           
-                <h4>Submitted work experience</h4>
+           <InputsPractical localPractical={localPractical} setLocalPractical={setLocalPractical} practical={practical} onClick={onClick}/>
+            <h4>Submitted work experience</h4>
             <div>
                 {cards}
             </div>  
